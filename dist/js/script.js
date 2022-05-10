@@ -90,7 +90,7 @@ const getQuotes = () => {
 	authorDiv.classList.add('group-hover:opacity-0');
 
 	setTimeout(() => {
-		fetch('http://api.quotable.io/random?maxLength=100')
+		fetch('https://api.quotable.io/random?maxLength=100')
 			.then((response) => response.json())
 			.then((data) => {
 				text.innerHTML = '';
