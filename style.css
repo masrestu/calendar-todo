@@ -1,0 +1,17 @@
+* {
+	border: 1px solid red;
+}
+table th {
+	text-align: center;
+}
+table td {
+	text-align: right;
+	border: 1px solid black;
+	height: 70px;
+	width: 14%;
+	padding-right: 20px;
+}
+.monthly-view {
+	width: 700px;
+	margin: auto;
+}

@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+	@apply font-inter;
+}
+
+table {
+	@apply text-white;
+}
+
+table th {
+	@apply text-xl border-b-2 border-b-white pb-2;
+}
+
+table td {
+	@apply text-right pr-2 py-3 w-[14%];
+}
+
+.dateSpan {
+    @apply text-xl italic cursor-pointer opacity-50 hover:opacity-100 hover:drop-shadow-lg hover:scale-[2] inline-block transition;
+}
+
+#todo-list li {
+	@apply text-sm mt-4 text-white list-disc mx-6 text-justify opacity-50 hover:opacity-100 hover:scale-105 origin-left transition;
+}
+
+.circle {
+	@apply relative;
+}
+
+.today {
+	@apply opacity-100;
+}
+
+table td svg {
+	@apply absolute w-16 -right-3 -top-1 fill-red-500 scale-x-150;
+}
