@@ -11,19 +11,19 @@ table {
 }
 
 table th {
-	@apply text-xl border-b-2 border-b-white pb-2;
+	@apply border-b-2 border-b-white pb-2 text-xl;
 }
 
 table td {
-	@apply text-right pr-2 py-3 w-[14%];
+	@apply w-[14%] py-3 pr-2 text-right;
 }
 
 .dateSpan {
-    @apply text-xl italic cursor-pointer opacity-50 hover:opacity-100 hover:drop-shadow-lg hover:scale-[2] inline-block transition;
+	@apply inline-block cursor-pointer text-xl italic opacity-50 transition group-hover:scale-[2] group-hover:opacity-100 group-hover:drop-shadow-lg group-hover:text-white;
 }
 
 #todo-list li {
-	@apply text-sm mt-4 text-white list-disc mx-6 text-justify opacity-50 hover:opacity-100 hover:scale-105 origin-left transition;
+	@apply mx-6 mt-4 origin-left list-disc text-justify text-sm text-white opacity-50 transition hover:scale-105 hover:opacity-100;
 }
 
 .circle {
@@ -35,5 +35,5 @@ table td {
 }
 
 table td svg {
-	@apply absolute w-16 -right-3 -top-1 fill-red-500 scale-x-150;
+	@apply absolute -right-3 -top-1 w-16 scale-x-150 fill-red-500;
 }
