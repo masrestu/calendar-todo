@@ -148,7 +148,7 @@ const welcomeView = () => {
 	const hello = document.querySelector('#hello');
 	const askName = document.querySelector('#ask-name');
 	const nameInput = document.querySelector('#name-input');
-	if (localStorage.name != '') {
+	if (localStorage.name != '' && typeof localStorage.name != 'undefined') {
 		hello.classList.remove('animate-fade-in');
 		hello.classList.add('animate-fade-in-out');
 		hello.innerHTML = 'Good morning, ' + localStorage.name;
