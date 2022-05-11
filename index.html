@@ -22,7 +22,7 @@
 		<div class="monthly-view mx-auto flex h-full w-full items-center justify-center">
 			<div class="container mt-12 flex h-[34.5rem] w-full justify-center">
 				<div id="todo-section" class="w-96 p-6">
-					<div class="mx-auto h-full w-full overflow-hidden rounded-xl p-5 drop-shadow-md backdrop-blur-3xl">
+					<div class="mx-auto h-full w-full overflow-hidden rounded-xl p-5 drop-shadow-md backdrop-blur-3xl opacity-0 transition duration-[2000ms]" id="todo-card">
 						<h1 class="mb-6 text-2xl font-bold text-white">To Do List</h1>
 						<hr />
 						<ul id="todo-list">
@@ -36,7 +36,7 @@
 				</div>
 				<div class="flex w-[48rem] flex-col justify-between p-6">
 					<!-- calendar -->
-					<div class="mx-auto flex w-full flex-col items-end overflow-hidden rounded-xl p-5 drop-shadow-md backdrop-blur-3xl">
+					<div class="mx-auto flex w-full flex-col items-end overflow-hidden rounded-xl p-5 drop-shadow-md backdrop-blur-3xl opacity-0 transition duration-[2000ms]" id="monthly-view">
 						<h1 id="monthName" class="mb-6 inline-block cursor-pointer text-4xl font-bold text-white transition hover:scale-125">January</h1>
 						<table id="monthly" class="w-full">
 							<thead>
@@ -55,7 +55,7 @@
 					</div>
 
 					<!-- quote -->
-					<div class="group mx-auto flex h-16 w-full items-center overflow-hidden rounded-xl py-3 drop-shadow-md backdrop-blur-3xl">
+					<div class="group mx-auto flex h-16 w-full items-center overflow-hidden rounded-xl py-3 drop-shadow-md backdrop-blur-3xl opacity-0 transition duration-[2000ms]" id="quote-view">
 						<h4 id="quoteText" class="absolute w-full text-center text-sm italic text-white opacity-0 transition duration-1000 group-hover:-translate-y-3"></h4>
 						<h4 id="quoteAuthor" class="absolute w-full text-center text-sm italic text-white opacity-0 transition duration-1000 group-hover:translate-y-3 group-hover:opacity-50">
 							<span id="authorName"></span>

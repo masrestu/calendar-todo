@@ -690,6 +690,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 1000ms;
 }
 
+.duration-\[2000ms\] {
+  transition-duration: 2000ms;
+}
+
+.duration-\[2000\] {
+  transition-duration: 2000;
+}
+
 * {
   font-family: Inter;
 }

@@ -97,14 +97,32 @@ const getQuotes = () => {
 				text.innerHTML = '"' + data.content + '"';
 				author.innerHTML = data.author;
 
-                text.classList.add('opacity-100');
-                text.classList.remove('opacity-0');
+				text.classList.add('opacity-100');
+				text.classList.remove('opacity-0');
 
-                authorDiv.classList.add('group-hover:opacity-50');
-                authorDiv.classList.remove('group-hover:opacity-0');
+				authorDiv.classList.add('group-hover:opacity-50');
+				authorDiv.classList.remove('group-hover:opacity-0');
 			});
 	}, 1000);
 };
 
-generateThisMonth();
-getQuotes();
+window.onload = (event) => {
+	generateThisMonth();
+	const todoSection = document.querySelector('#todo-card');
+	todoSection.classList.remove('opacity-0');
+	todoSection.classList.add('opacity-100');
+	
+	setTimeout(() => {
+		const monthCalSection = document.querySelector('#monthly-view');
+		monthCalSection.classList.remove('opacity-0');
+		monthCalSection.classList.add('opacity-100');
+	}, 1000);
+	
+	setTimeout(() => {
+		const quoteSection = document.querySelector('#quote-view');
+		quoteSection.classList.remove('opacity-0');
+		quoteSection.classList.add('opacity-100');
+		getQuotes();
+	}, 2000);
+	console.log('page is fully loaded');
+};
