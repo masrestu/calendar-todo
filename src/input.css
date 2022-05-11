@@ -23,7 +23,7 @@ table td {
 }
 
 #todo-list li {
-	@apply mx-6 mt-4 origin-left list-disc text-justify text-sm text-white opacity-50 transition hover:scale-105 hover:opacity-100;
+	@apply mx-6 mt-4 origin-left list-disc text-justify text-sm text-white opacity-50 transition hover:scale-105 hover:opacity-100 font-semibold;
 }
 
 .circle {

@@ -1,10 +1,12 @@
+const { apply } = require("function-bind")
+
 module.exports = {
 	content: ['index.html', 'dist/js/script.js'],
 	theme: {
 		extend: {
 			backgroundImage: {
 				// 'back-splash': "url('https://source.unsplash.com/1280x720?nature')",
-				'back-splash': "url('https://source.unsplash.com/854x480?nature')",
+				// 'back-splash': "url('https://source.unsplash.com/854x480?nature')",
 				'splash1': "url('../../dist/img/background/1.jpg')",
 				'splash2': "url('../../dist/img/background/2.jpg')",
 				'splash3': "url('../../dist/img/background/3.jpg')",
@@ -28,6 +30,47 @@ module.exports = {
 			},
 			fontFamily: {
 				inter: ['Inter'],
+			},
+			animation: {
+				'fade-in': 'tampil 2s linear forwards',
+				'fade-in-out': 'fade-in-out 5s linear forwards',
+				'fade-and-shrink': 'tampil 2s linear forwards, shrink 0.5s linear forwards 2s',
+			},
+			keyframes: {
+				'tampil': {
+					'0%': {
+						opacity: 0,
+					},
+					'20%': {
+						opacity: 1,
+					},
+					'100%': {
+						opacity: 1,
+					},
+				},
+				'fade-in-out': {
+					'0%': {
+						opacity: 0,
+					},
+					'30%': {
+						opacity: 1,
+					},
+					'85%': {
+						opacity: 1,
+					},
+					'100%': {
+						opacity: 0,
+					},
+				},
+				'shrink': {
+					'0%': {
+						transform: 'scale(1)',
+					},
+					'100%': {
+						transform: 'scale(0.4)',
+						top: '-70px',
+					},
+				},
 			},
 		},
 	},

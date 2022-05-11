@@ -1,3 +1,7 @@
+// localStorage.name = '';
+// localStorage.name = 'Restu';
+let timeDelay = 4000;
+
 const date = new Date(),
 	y = date.getFullYear(),
 	m = date.getMonth();
@@ -99,28 +103,88 @@ const getQuotes = () => {
 				authorDiv.classList.add('group-hover:opacity-50');
 				authorDiv.classList.remove('group-hover:opacity-0');
 			});
-	}, 1000);
+	}, 500);
 };
 
-window.onload = (event) => {
+const todoLists = document.querySelector('#todo-list');
+const todoItems = todoLists.querySelectorAll('li');
+
+todoItems.forEach((item) => {
+	item.onclick = (e) => {
+		e.target.classList.toggle('font-semibold');
+		// e.target.classList.toggle('font-medium');
+		e.target.classList.toggle('line-through');
+	};
+});
+
+const name = document.querySelector('#name');
+
+const loadMain = () => {
+	timeDelay = 500;
+	document.querySelector('#welcome').classList.add('hidden');
+	document.querySelector('#main-content').classList.remove('hidden');
 	generateThisMonth();
-	const todoSection = document.querySelector('#todo-card');
-	todoSection.classList.remove('opacity-0');
-	todoSection.classList.add('opacity-100');
+	setTimeout(() => {
+		const todoSection = document.querySelector('#todo-card');
+		todoSection.classList.remove('opacity-0');
+		todoSection.classList.add('opacity-100');
+	}, (timeDelay));
 
 	setTimeout(() => {
 		const monthCalSection = document.querySelector('#monthly-view');
 		monthCalSection.classList.remove('opacity-0');
 		monthCalSection.classList.add('opacity-100');
-	}, 1000);
+	}, (timeDelay+=500));
 
 	setTimeout(() => {
 		const quoteSection = document.querySelector('#quote-view');
 		quoteSection.classList.remove('opacity-0');
 		quoteSection.classList.add('opacity-100');
 		getQuotes();
-	}, 2000);
-	console.log('page is fully loaded');
+	}, (timeDelay+=500));
+};
+
+const welcomeView = () => {
+	const hello = document.querySelector('#hello');
+	const askName = document.querySelector('#ask-name');
+	const nameInput = document.querySelector('#name-input');
+	if (localStorage.name != '') {
+		hello.classList.remove('animate-fade-in');
+		hello.classList.add('animate-fade-in-out');
+		hello.innerHTML = 'Good morning, ' + localStorage.name;
+		setTimeout(() => {
+			hello.classList.add('hidden');
+			loadMain();
+		}, (timeDelay+=1000));
+	} else {
+		setTimeout(() => {
+			hello.classList.add('hidden');
+			askName.classList.remove('hidden');
+		}, 3000);
+		setTimeout(() => {
+			nameInput.classList.add('animate-fade-in');
+			if ('name' in localStorage) {
+				name.value = localStorage.name;
+			}
+		}, 5500);
+	}
+};
+
+const btnGo = document.querySelector('#btn-go');
+btnGo.addEventListener('click', (e) => {
+	e.preventDefault();
+	const nameInput = name.value;
+	if (nameInput != '' && typeof nameInput != 'undefined') {
+		localStorage.name = nameInput;
+		setTimeout(() => {
+			loadMain();
+		}, 1000);
+	}
+});
+
+window.onload = (event) => {
+	welcomeView();
+	// loadMain();
 };
 
 let currentBg = 'bg-splash1';
